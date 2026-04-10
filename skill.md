@@ -157,18 +157,19 @@ case "$(uname -s)" in
 esac
 ```
 
-### 9. Push Instructions
+### 9. Create GitHub Repo & Push
 
-Tampilkan ke user:
+Buat repo public di GitHub dan push otomatis menggunakan `gh` CLI:
+
+```bash
+cd "$PUBLIC_SKILL_DIR/{name}"
+gh repo create a-athaullah/{name} --public --source=. --remote=origin --push
 ```
-Skill created and active. To publish:
-1. Create repo: https://github.com/new → name: {name}
-2. Push:
-   cd $PUBLIC_SKILL_DIR/{name}
-   git remote add origin https://github.com/a-athaullah/{name}.git
-   git branch -M main
-   git push -u origin main
-```
+
+Jika `gh` belum terinstall atau belum login:
+1. Install: `winget install GitHub.cli` (Windows) / `brew install gh` (macOS) / `sudo apt install gh` (Linux)
+2. Login: `gh auth login --web -p https`
+3. Ulangi command di atas
 
 ## Post-Create
 
